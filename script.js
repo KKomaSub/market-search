@@ -37,7 +37,7 @@ function ensureRegionSelected() {
 // 지역 목록을 서버에서 불러오도록 했음
 async function loadRegions() {
   const res = await fetch(
-    "https://drive.google.com/uc?export=download&id=1sKaRvRi2OO_JLmMaUWQxWBi_yHKeYY1_"
+    "/daangn_locations.json"
   );
   const json = await res.json();
 
