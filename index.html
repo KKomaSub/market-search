@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>당근 중고거래 검색</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 style="margin-bottom: 18px;">중고거래 검색</h1>
+
+<!-- 검색 영역 -->
+<div class="search-wrapper">
+
+  <select id="siSelect" class="si-select">
+    <option value="">시/도 선택</option>
+  </select>
+
+  <select id="guSelect" class="gu-select">
+    <option value="">구/군 선택</option>
+  </select>
+
+  <select id="dongSelect" class="dong-select">
+    <option value="">동 선택</option>
+  </select>
+
+  <button id="geoBtn" class="geo-btn">현재 위치로 설정</button>
+
+  <input type="hidden" id="regionSelect">
+
+  <input id="searchInput" class="search-input" placeholder="검색어 입력 (예: 노트북)">
+
+  <select id="statusFilter" class="status-select">
+    <option value="all">전체</option>
+    <option value="Selling">판매중</option>
+    <option value="Closed">판매완료</option>
+  </select>
+
+  <input id="minPrice" type="number" placeholder="최소가격" style="width:110px">
+  <input id="maxPrice" type="number" placeholder="최대가격" style="width:110px">
+
+  <select id="sortSelect" class="status-select">
+    <option value="latest">최신순</option>
+    <option value="">기본순</option>
+  </select>
+
+  <button id="searchBtn" class="search-btn">검색</button>
+</div>
+
+<!-- 결과 -->
+<div id="results" class="results-grid"></div>
+
+<!-- 더보기 -->
+<button id="loadMoreBtn" class="load-more-btn hidden">더보기</button>
+
+<!-- 상세보기 모달 -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="modalClose" class="modal-close">&times;</span>
+
+    <img id="detailImg" class="detail-img">
+
+    <h2 id="detailTitle" class="detail-title"></h2>
+    <p id="detailPrice" class="detail-price"></p>
+    <p id="detailStatus" class="detail-status"></p>
+    <p id="detailCreated" class="detail-date"></p>
+    <p id="detailContent" class="detail-content"></p>
+
+    <a id="detailLink" class="detail-link" target="_blank">원본 게시글 보기</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

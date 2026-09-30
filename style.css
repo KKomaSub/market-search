@@ -1,0 +1,254 @@
+/* 기본 */
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: #fafafa;
+  margin: 0;
+  padding: 20px;
+  color: #222;
+}
+
+/* 검색바 래퍼 */
+.search-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+  background: white;
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* 드롭다운 공통 */
+.si-select,
+.gu-select,
+.dong-select,
+.region-select,
+.search-input,
+.status-select,
+#minPrice,
+#maxPrice {
+  padding: 11px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 15px;
+  transition: 0.15s;
+}
+
+.si-select:focus,
+.gu-select:focus,
+.dong-select:focus,
+.search-input:focus,
+.status-select:focus,
+#minPrice:focus,
+#maxPrice:focus {
+  border-color: #ff7e00;
+  box-shadow: 0 0 6px rgba(255,126,0,0.25);
+  outline: none;
+}
+
+/* 버튼 */
+.search-btn {
+  background: #ff7e00;
+  color: white;
+  padding: 11px 20px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.search-btn:hover {
+  background: #ff912d;
+}
+
+/* 결과 카드 그리드 */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+/* 상품 카드 */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  transition: 0.18s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.card-title {
+  padding: 10px 12px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card-price {
+  padding: 0 12px 12px;
+  color: #ff6f00;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Skeleton */
+.skeleton {
+  background: linear-gradient(90deg, #eee, #f4f4f4, #eee);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.3s infinite;
+  border-radius: 14px;
+}
+
+.skeleton-card {
+  height: 250px;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* 더보기 버튼 */
+.load-more-btn {
+  margin: 25px auto;
+  display: block;
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.load-more-btn:hover {
+  background: #f1f1f1;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 모달 (정중앙) */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal.show {
+  display: flex;
+}
+
+/* 모달 박스 */
+.modal-content {
+  width: 450px;
+  max-height: 88vh;
+  background: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  overflow-y: auto;
+  position: relative;
+  animation: popup-show 0.2s ease-out;
+}
+
+@keyframes popup-show {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* 닫기 버튼 */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 26px;
+  cursor: pointer;
+  color: #777;
+}
+
+.modal-close:hover {
+  color: #111;
+}
+
+/* 상세 이미지 */
+.detail-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* 상세 텍스트 */
+.detail-title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.detail-price {
+  font-size: 19px;
+  color: #ff6f00;
+  margin: 6px 0;
+}
+
+.detail-status {
+  color: #777;
+}
+
+.detail-content {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* 링크 버튼 */
+.detail-link {
+  margin-top: 18px;
+  display: inline-block;
+  padding: 12px 18px;
+  background: #ff7e00;
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.detail-link:hover {
+  background: #ff912d;
+}
+.geo-btn {
+  background: #4a8bfd;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.geo-btn:hover {
+  background: #74a6ff;
+}
